@@ -2,6 +2,9 @@
 syntax: glob
 /target
 
+# Mac stuff
+.DS_Store
+
 # Do not include Saxon Jar files in public git repo
 *.jar
 

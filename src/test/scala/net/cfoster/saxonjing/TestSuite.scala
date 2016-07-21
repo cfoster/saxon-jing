@@ -1,12 +1,9 @@
-package com.hsbc.saxonjing
+package net.cfoster.saxonjing
 
 import java.io.File
 import java.net.URL
 import javax.xml.transform.stream.StreamSource
 
-import net.cfoster.saxonjing.{SchemaFunction,
-  SchemaReportApplierFunction,
-  SchemaReportFunction}
 import net.sf.saxon.s9api._
 import net.sf.saxon.trans.XPathException
 import org.scalatest.FunSuite
