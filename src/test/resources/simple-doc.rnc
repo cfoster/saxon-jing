@@ -1,0 +1,9 @@
+default namespace = ""
+
+start =
+  element doc {
+    element my-doc {
+      element date { xsd:date },
+      element text { text }
+    }
+  }

@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.cfoster</groupId>
+  <artifactId>saxon-jing</artifactId>
+  <packaging>jar</packaging>
+  <version>0.9.0</version>
+  <name>saxon-jing</name>
+
+  <build>
+
+    <plugins>
+      <plugin>
+        <groupId>net.alchim31.maven</groupId>
+        <artifactId>scala-maven-plugin</artifactId>
+        <version>3.2.2</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.scalatest</groupId>
+        <artifactId>scalatest-maven-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+          <junitxml>.</junitxml>
+          <filereports>WDF TestSuite.txt</filereports>
+          <forkMode>never</forkMode>
+        </configuration>
+        <executions>
+          <execution>
+            <id>test</id>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest_2.11</artifactId>
+      <version>2.2.6</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>net.alchim31.maven</groupId>
+      <artifactId>scala-maven-plugin</artifactId>
+      <version>3.2.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-library</artifactId>
+      <version>2.11.8</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.scalatest</groupId>
+      <artifactId>scalatest-maven-plugin</artifactId>
+      <version>1.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.saxonica</groupId>
+      <artifactId>saxon9ee</artifactId>
+      <version>9.7.0.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.saxonica</groupId>
+      <artifactId>saxon9ee-test</artifactId>
+      <version>9.7.0.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.saxonica</groupId>
+      <artifactId>saxon9-icu</artifactId>
+      <version>9.7.0.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.saxonica</groupId>
+      <artifactId>saxon9-sql</artifactId>
+      <version>9.7.0.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.thaiopensource</groupId>
+      <artifactId>jing</artifactId>
+      <version>20091111</version>
+      <exclusions>
+        <exclusion>
+          <groupId>net.sf.saxon</groupId>
+          <artifactId>saxon</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+  </dependencies>
+  
+</project>
