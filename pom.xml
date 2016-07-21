@@ -87,25 +87,17 @@
     <dependency>
       <groupId>com.saxonica</groupId>
       <artifactId>saxon9ee</artifactId>
-      <version>9.7.0.5</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.saxonica</groupId>
-      <artifactId>saxon9ee-test</artifactId>
-      <version>9.7.0.5</version>
+      <version>9.7.0.7</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/saxon9ee-9.7.0.7.jar</systemPath>
     </dependency>
 
     <dependency>
       <groupId>com.saxonica</groupId>
       <artifactId>saxon9-icu</artifactId>
-      <version>9.7.0.5</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.saxonica</groupId>
-      <artifactId>saxon9-sql</artifactId>
-      <version>9.7.0.5</version>
+      <version>9.7.0.7</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/lib/saxon9-icu-9.7.0.7.jar</systemPath>
     </dependency>
 
     <dependency>

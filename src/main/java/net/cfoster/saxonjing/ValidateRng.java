@@ -32,7 +32,7 @@ public class ValidateRng
   private Object vdInstance;
 
   ClassLoader classLoader() { // can be replaced with a separate class loader.
-    return ClassLoader.getSystemClassLoader();
+    return Thread.currentThread().getContextClassLoader();
   }
 
   public ValidateRng(InputSource schemaInputSource) {

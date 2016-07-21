@@ -16,6 +16,7 @@ class TestSuite extends FunSuite
   final val PATH: File = new File("src/test/resources")
 
   test("Test String to URL") {
+
     var url: URL = null
     url = SchemaReportApplierFunction.URL("http://a/b/c.xml")
     assert("http://a/b/c.xml" == url.toExternalForm)

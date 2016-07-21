@@ -2,6 +2,9 @@
 syntax: glob
 /target
 
+# Do not include Saxon Jar files in public git repo
+*.jar
+
 # IDEA
 *.iml
 *.ipr
