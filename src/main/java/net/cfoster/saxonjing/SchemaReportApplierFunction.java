@@ -172,7 +172,7 @@ public class SchemaReportApplierFunction implements Callable
       catch (MalformedURLException e1) {
         throw new ValidateRngException(
           MessageFormat.format(
-            "Unable to find Schema ''%0''. %1",
+            "Unable to find Schema ''{0}''. {1}",
              value, e.getMessage()), Constants.ERR_RNG_NOT_FOUND, e1
         );
       }
