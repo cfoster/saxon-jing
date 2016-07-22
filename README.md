@@ -73,9 +73,9 @@ rng:schema-report($uri as xs:string) as function(node()) as element(report)
 
 | ERROR CODE | MEANING                                                |
 |------------|--------------------------------------------------------|
-| SXJG0001   | Jing can not be found on Classpath                     |
-| SXJG0002   | Syntax Error in Relax NG Schema                        |
-| SXJG0004   | Could not find Relax NG Schema                         |
-| SXJG0005   | Generic Exception whilst trying to load RelaxNG Schema |
-| SXJG0006   | Schema Validation Failed                               |
-| SXJG0007   | Unknown Exception                                      |
+| RNGE0001   | Jing can not be found on Classpath                     |
+| RNGE0002   | Syntax Error in Relax NG Schema                        |
+| RNGE0003   | Could not find Relax NG Schema                         |
+| RNGE0004   | Generic Exception whilst trying to load RelaxNG Schema |
+| RNGE0005   | Schema Validation Failed                               |
+| RNGE0006   | Unknown Exception                                      |
