@@ -6,7 +6,7 @@ Enables Saxon to validate XML documents with a RelaxNG Compact Syntax Schema dur
 
 The following two functions are provided
 
-```
+```xpath
 namespace xmlns:rng = "http://relaxng.org/ns/structure/1.0"
 
 rng:schema($uri as xs:string) as function(node()) as empty-sequence()
@@ -45,7 +45,7 @@ rng:schema-report($uri as xs:string) as function(node()) as element(report)
     <xsl:variable
       name="validator"
       as="function(node()) as element(report)"
-      select="rng:schema-report('my-schema.rnc')" />
+      select="rng:schema('my-schema.rnc')" />
 
     <xsl:variable
       name="report-generator"
