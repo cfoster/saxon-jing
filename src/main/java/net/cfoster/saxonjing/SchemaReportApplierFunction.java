@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.List;
 
 public class SchemaReportApplierFunction implements Callable
@@ -37,7 +38,7 @@ public class SchemaReportApplierFunction implements Callable
    */
   public SchemaReportApplierFunction(
     XPathContext context,
-    Sequence[] initialArguments)
+    Sequence[] initialArguments) throws ValidateRngException
   {
     this.context = context;
     this.initialArguments = initialArguments;
@@ -45,27 +46,27 @@ public class SchemaReportApplierFunction implements Callable
     validator = compileSchema(inputSource); // stacktrace helps with debugging
   }
 
-  public InputSource fetchSchema()
+  public InputSource fetchSchema() throws ValidateRngException
   {
-    String arg1 = null;
-    try {
-      arg1 = initialArguments[0].head().getStringValue();
+    try
+    {
+      String arg1 = initialArguments[0].head().getStringValue();
+      return new InputSource(URL(arg1).toExternalForm());
     }
-    catch (XPathException e) {
-      throw new RuntimeException(e);
+    catch (XPathException e)
+    {
+      throw new RuntimeException(e); // unlikely to happen.
     }
-
-    return new InputSource(URL(arg1).toExternalForm());
   }
 
-  public ValidateRng compileSchema(InputSource i) {
+  public ValidateRng compileSchema(InputSource i) throws ValidateRngException
+  {
     return new ValidateRng(i);
   }
 
   /**
    * Nodes passed to this are validated against cached RNG Schema
   **/
-  @Override
   public Sequence call(
     XPathContext context,
     Sequence[] arguments) throws XPathException
@@ -73,7 +74,14 @@ public class SchemaReportApplierFunction implements Callable
     NodeInfo item = (NodeInfo)arguments[0].head();
     Node node = NodeOverNodeInfo.wrap(item);
 
-    validator.validate(new InputSource(node2stream(node)));
+    try
+    {
+      validator.validate(new InputSource(node2stream(node)));
+    }
+    catch(ValidateRngException e)
+    {
+      throw new XPathException(e.getMessage(), e.getErrorCode(), context);
+    }
 
     ErrorHandlerImpl eh = validator.getErrorHandler();
     ByteArrayOutputStream buffer = new ByteArrayOutputStream();
@@ -149,17 +157,24 @@ public class SchemaReportApplierFunction implements Callable
   /**
    * Converts a String value into a URL object.
    */
-  public static final URL URL(String value)
+  public static final URL URL(String value) throws ValidateRngException
   {
-    try {
+    try
+    {
       return new URL(value);
     }
-    catch(MalformedURLException e) {
-      try {
+    catch(MalformedURLException e)
+    {
+      try
+      {
         return new File(value).toURI().toURL();
       }
       catch (MalformedURLException e1) {
-        throw new RuntimeException(e);
+        throw new ValidateRngException(
+          MessageFormat.format(
+            "Unable to find Schema ''%0''. %1",
+             value, e.getMessage()), Constants.ERR_RNG_NOT_FOUND, e1
+        );
       }
     }
   }

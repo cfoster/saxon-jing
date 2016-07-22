@@ -1,7 +1,13 @@
 package net.cfoster.saxonjing;
 
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+
+import java.io.FileNotFoundException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.text.MessageFormat;
 
 /**
  * RelaxNG Validation, large portion of the code has been lifted from the
@@ -14,14 +20,6 @@ import java.lang.reflect.Method;
  * @author Charles Foster
  */
 
-/**
- * Try to produce error codes in future:
- *
- * RNGE0001 The document cannot be validated against the specified DTD or XML Schema.
- * RNGE0002 The validation cannot be started.
- * RNGE0003 No validator is available.
- * RNGE0004 No validator is found for the specified version.
- */
 public class ValidateRng
 {
   InputSource schemaInputSource;
@@ -35,7 +33,8 @@ public class ValidateRng
     return Thread.currentThread().getContextClassLoader();
   }
 
-  public ValidateRng(InputSource schemaInputSource) {
+  public ValidateRng(InputSource schemaInputSource) throws ValidateRngException
+  {
     this.schemaInputSource = schemaInputSource;
     loadSchema();
   }
@@ -44,7 +43,7 @@ public class ValidateRng
     return handler;
   }
 
-  private final void loadSchema()
+  private final void loadSchema() throws ValidateRngException
   {
     ClassLoader fcl = classLoader();
 
@@ -72,18 +71,51 @@ public class ValidateRng
       if (Boolean.TRUE.equals(loaded)) {
         validateMethod = vd.getMethod("validate", InputSource.class);
       }
+
+      if(handler.error != null)
+      {
+        Exception e = handler.error.get(0);
+        if(e instanceof SAXParseException) {
+          SAXParseException se = (SAXParseException)e;
+          throw new ValidateRngException(
+          MessageFormat.format(
+            "Found Invalid RelaxNG Syntax. In {0} at line {1}, column {2}.",
+            se.getSystemId() != null ? se.getSystemId() : se.getPublicId(),
+            se.getLineNumber(),
+            se.getColumnNumber()
+          ),
+          Constants.ERR_RNG_SYNTAX);
+        }
+      }
+
     }
-    catch (final ClassNotFoundException ex) {
-      throw new RuntimeException(ex);
-      // throw BXVA_RELAXNG_X.get(info);
+    catch (final ClassNotFoundException ex)
+    {
+      throw new ValidateRngException(
+        "Can not find Jing library on classpath.", Constants.ERR_NO_JING, ex);
     }
-    catch (final Exception ex) {
-      throw new RuntimeException(ex);
-      // throw BXVA_FAIL_X.get(info, Util.rootException(ex));
+    catch(InvocationTargetException ex)
+    {
+      if(ex.getTargetException() instanceof FileNotFoundException)
+      {
+        throw new ValidateRngException(
+          MessageFormat.format(
+          "Unable to find Schema file ''{0}''", schemaInputSource.getSystemId()),
+          Constants.ERR_RNG_NOT_FOUND, ex);
+      }
+
+      throw new ValidateRngException(
+        ex.getMessage(),
+        Constants.ERR_RNG_LOAD,
+        ex);
+    }
+    catch (final Exception ex)
+    {
+      throw new ValidateRngException(ex.getMessage(), "SXJG0002", ex);
     }
   }
 
-  public void validate(InputSource in)
+  public void validate(InputSource in) throws ValidateRngException
   {
     getErrorHandler().reset();
 
@@ -91,7 +123,7 @@ public class ValidateRng
       validateMethod.invoke(vdInstance, in);
     }
     catch (Exception e) {
-      throw new RuntimeException(e);
+      throw new ValidateRngException(e.getMessage(), Constants.ERR_INVALID, e);
     }
   }
 }

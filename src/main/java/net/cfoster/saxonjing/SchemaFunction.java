@@ -19,10 +19,14 @@ public class SchemaFunction extends AbstractSchemaFunction
       @Override
       public Sequence call(
         XPathContext context, Sequence[] arguments) throws XPathException {
-        return new CallableFunction(
-          1, new SchemaApplierFunction(context, arguments),
-          AnyFunctionType.ANY_FUNCTION
-        );
+        try {
+          return new CallableFunction(
+            1, new SchemaApplierFunction(context, arguments),
+            AnyFunctionType.ANY_FUNCTION
+          );
+        } catch(ValidateRngException e) {
+          throw e.createXPathException(context);
+        }
       }
     };
   }

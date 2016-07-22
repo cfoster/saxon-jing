@@ -8,6 +8,8 @@ syntax: glob
 # Do not include Saxon Jar files in public git repo
 *.jar
 
+*.lic
+
 # IDEA
 *.iml
 *.ipr

@@ -13,19 +13,16 @@ public class ErrorHandlerImpl implements ErrorHandler
   List<SAXParseException> error;
   List<SAXParseException> fatal;
 
-  @Override
   public void warning(SAXParseException e) throws SAXException {
     if(warning == null) warning = new ArrayList<SAXParseException>();
     warning.add(e);
   }
 
-  @Override
   public void error(SAXParseException e) throws SAXException {
     if(error == null) error = new ArrayList<SAXParseException>();
     error.add(e);
   }
 
-  @Override
   public void fatalError(SAXParseException e) throws SAXException {
     if(fatal == null) fatal = new ArrayList<SAXParseException>();
     fatal.add(e);

@@ -13,7 +13,7 @@ public class SchemaApplierFunction extends SchemaReportApplierFunction
 {
   public SchemaApplierFunction(
     XPathContext context,
-    Sequence[] initialArguments)
+    Sequence[] initialArguments) throws ValidateRngException
   {
     super(context, initialArguments);
   }
@@ -26,13 +26,22 @@ public class SchemaApplierFunction extends SchemaReportApplierFunction
     NodeInfo item = (NodeInfo)arguments[0].head();
     Node node = NodeOverNodeInfo.wrap(item);
 
-    validator.validate(new InputSource(node2stream(node)));
+    try {
+      validator.validate(new InputSource(node2stream(node)));
+    } catch(ValidateRngException e) {
+      throw new XPathException(e.getMessage(), e.getErrorCode(), context);
+    }
+
     ErrorHandlerImpl eh = validator.getErrorHandler();
 
-    if(eh.fatal != null)
-      throw new XPathException(eh.fatal.get(0));
-    if(eh.error != null)
-      throw new XPathException(eh.error.get(0));
+    String message = null;
+    if(eh.fatal != null) message = eh.fatal.get(0).getMessage();
+    else if(eh.error != null) message = eh.error.get(0).getMessage();
+
+    if(message != null) {
+      throw new ValidateRngException(message, Constants.ERR_INVALID)
+        .createXPathException(context);
+    }
 
     return EmptySequence.getInstance();
   }

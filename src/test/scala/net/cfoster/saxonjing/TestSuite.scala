@@ -12,8 +12,8 @@ class TestSuite extends FunSuite
 {
   final val PATH: File = new File("src/test/resources")
 
-  test("Test String to URL") {
-
+  test("Test String to URL")
+  {
     var url: URL = null
     url = SchemaReportApplierFunction.URL("http://a/b/c.xml")
     assert("http://a/b/c.xml" == url.toExternalForm)
@@ -65,19 +65,89 @@ class TestSuite extends FunSuite
     /** NO Exception Thrown **/
   }
 
-  /**
-   * This test requires Saxon EE
-  **/
   test("Produce Report in XSLT")
   {
-    val proc : Processor = new Processor(true);
+    val proc : Processor = new Processor(false);
     proc.registerExtensionFunction(new SchemaReportFunction());
     val exe : XsltExecutable = proc.newXsltCompiler().compile(
       new StreamSource(new File(PATH, "test-001.xsl"))
     )
 
-    val transformer :  Xslt30Transformer = exe.load30()
+    val transformer : Xslt30Transformer = exe.load30()
     transformer.callTemplate(null)
   }
+
+  /**
+   * This test requires Saxon EE
+   **/
+  test("RelaxNG Schema Not there")
+  {
+    val proc : Processor = new Processor(true);
+    proc.registerExtensionFunction(new SchemaReportFunction());
+    val exe : XsltExecutable = proc.newXsltCompiler().compile(
+      new StreamSource(new File(PATH, "test-002.xsl"))
+    )
+    val transformer : Xslt30Transformer = exe.load30()
+    try {
+      transformer.callTemplate(null)
+    } catch {
+      case ex : SaxonApiException => {
+        assert(ex.getErrorCode.toString ==
+          s"rng:${Constants.ERR_RNG_NOT_FOUND}")
+        assert(ex.getMessage.startsWith("Unable to find Schema"))
+      }
+    }
+  }
+
+  /**
+   * This test requires Saxon EE
+   **/
+  test("Bad Syntax RelaxNG Schema")
+  {
+    val proc : Processor = new Processor(true);
+    proc.registerExtensionFunction(new SchemaReportFunction());
+    val exe : XsltExecutable = proc.newXsltCompiler().compile(
+      new StreamSource(new File(PATH, "test-003.xsl"))
+    )
+    val transformer : Xslt30Transformer = exe.load30()
+    try {
+      transformer.callTemplate(null)
+    } catch {
+      case ex : SaxonApiException => {
+        assert(ex.getErrorCode.toString == s"rng:${Constants.ERR_RNG_SYNTAX}")
+        assert(ex.getMessage.startsWith("Found Invalid RelaxNG Syntax."))
+      }
+    }
+  }
+
+  test("Instance Document Invalid")
+  {
+    val proc : Processor = new Processor(false);
+    proc.registerExtensionFunction(new SchemaFunction());
+    val exe : XsltExecutable = proc.newXsltCompiler().compile(
+      new StreamSource(new File(PATH, "test-004.xsl"))
+    )
+    val transformer : Xslt30Transformer = exe.load30()
+    try {
+      transformer.callTemplate(null)
+    } catch {
+      case ex : SaxonApiException => {
+        assert(ex.getErrorCode.toString ==
+          s"rng:${Constants.ERR_INVALID}")
+      }
+    }
+  }
+
+  test("Instance Document Valid")
+  {
+    val proc : Processor = new Processor(false);
+    proc.registerExtensionFunction(new SchemaFunction());
+    val exe : XsltExecutable = proc.newXsltCompiler().compile(
+      new StreamSource(new File(PATH, "test-005.xsl"))
+    )
+    val transformer : Xslt30Transformer = exe.load30()
+    transformer.callTemplate(null)
+  }
+
 
 }
