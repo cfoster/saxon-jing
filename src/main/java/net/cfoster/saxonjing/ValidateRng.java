@@ -1,3 +1,18 @@
+/**
+ * Copyright 2016 Charles Foster
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package net.cfoster.saxonjing;
 
 import org.xml.sax.InputSource;
@@ -9,10 +24,9 @@ import java.lang.reflect.Method;
 import java.text.MessageFormat;
 
 /**
- * RelaxNG Validation, large portion of the code has been lifted from the
+ * RelaxNG Validation, portions of the code have been lifted from the
  * BaseX Project, specifically the ValidateRng class.
- *
- * Thank you to the original author Christian Gruen.
+ * Thanks to Christian Gruen and the BaseX Team!
  *
  * @author BaseX Team 2005-16, BSD License
  * @author Christian Gruen
