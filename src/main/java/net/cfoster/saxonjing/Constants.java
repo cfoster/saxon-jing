@@ -7,7 +7,7 @@ public class Constants
   /** Jing can not be found on Classpath **/
   public static String ERR_NO_JING = "SXJG0001";
 
-  /** Ssyntax Error in Relax NG Schema **/
+  /** Syntax Error in Relax NG Schema **/
   public static String ERR_RNG_SYNTAX = "SXJG0002";
 
   /** Could not find Relax NG Schema **/
@@ -18,4 +18,7 @@ public class Constants
 
   /** Schema Validation Failed **/
   public static String ERR_INVALID = "SXJG0006";
+
+  /** Unknown Exception **/
+  public static String ERR_UNKNOWN = "SXJG0007";
 }

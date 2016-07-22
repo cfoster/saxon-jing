@@ -1,7 +1,6 @@
 package net.cfoster.saxonjing;
 
 import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 import java.io.FileNotFoundException;
@@ -89,6 +88,10 @@ public class ValidateRng
       }
 
     }
+    catch (ValidateRngException e)
+    {
+      throw e; // rethrow
+    }
     catch (final ClassNotFoundException ex)
     {
       throw new ValidateRngException(
@@ -109,9 +112,9 @@ public class ValidateRng
         Constants.ERR_RNG_LOAD,
         ex);
     }
-    catch (final Exception ex)
+    catch (final Exception e)
     {
-      throw new ValidateRngException(ex.getMessage(), "SXJG0002", ex);
+      throw new ValidateRngException(e.getMessage(), Constants.ERR_UNKNOWN, e);
     }
   }
 

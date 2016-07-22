@@ -12,7 +12,7 @@
     </xsl:variable>
 
 
-    <xsl:variable name="f" as="function(*)"
+    <xsl:variable name="f" as="function(node()) as element(report)"
       select="rng:schema-report('src/test/resources/bad-syntax.rnc')" />
     
     <xsl:sequence select="$f($input)" /> <!-- should throw error -->
