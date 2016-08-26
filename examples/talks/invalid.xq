@@ -2,6 +2,7 @@ xquery version "3.0";
 
 declare namespace rng = "http://relaxng.org/ns/structure/1.0";
 
+(: load and compile the schema validator as a function :)
 declare variable $schema := rng:schema('talks.rnc');
 
 declare variable $invalid-conference :=
@@ -19,10 +20,11 @@ declare variable $invalid-conference :=
     </day>
   </conference>;
 
-<out>
-  <!-- validate an XML node -->
-  {
-    $schema($invalid-conference)
-  }
-  Success ????
+<out>{
+
+(: validate an XML node :)
+  $schema($invalid-conference)
+
+}
+Success ????
 </out>
