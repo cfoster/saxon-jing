@@ -1,0 +1,8 @@
+default namespace = ""
+
+start =
+  element data {
+    element date { xsd:date },
+    element integer { xsd:integer },
+    element text { text }
+  }

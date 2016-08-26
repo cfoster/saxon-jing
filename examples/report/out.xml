@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<out>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-1.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-10.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-2.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-3.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-4.xml">
+      <report>
+         <error>
+            <message column-number="20" line-number="2">character content of element "date" invalid; must be an ISO date</message>
+            <message column-number="24" line-number="3">character content of element "integer" invalid; must be an integer</message>
+            <message column-number="10" line-number="4">element "blurb" not allowed anywhere; expected element "text"</message>
+            <message column-number="8" line-number="5">element "data" incomplete; missing required element "text"</message>
+         </error>
+      </report>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-5.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-6.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-7.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-8.xml">
+      <report/>
+   </file>
+   <file uri="file:/Users/cfoster/Documents/crf/projects/saxon-jing/examples/report/data/entry-9.xml">
+      <report>
+         <error>
+            <message column-number="33" line-number="3">character content of element "integer" invalid; must be an integer</message>
+         </error>
+      </report>
+   </file>
+</out>

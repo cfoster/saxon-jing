@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<conference>
+
+  <day name="Saturday, June 4th" id="1">
+    <talks>
+
+      <talk>
+        <title>Forward with XSLT 3.0, processing uninterrupted live feeds and
+          other goodies</title>
+        <time>10:00:00</time>
+        <abstract>
+          <p>Applying XSLT in the real world with specific attention to how
+            certain existing and well-known use-cases become more accessible and
+            easier to manage with features introduced in XSLT 3.0. We will look
+            in particular about processing a Twitter feed, a technique that can
+            be used with any feed, be it Facebook messages, weather forecasts or
+            a news feed. For this we'll explore new techniques and a couple of
+            best-practices that have come to fruition during my recent work in
+            the XSLT fields and from feedback I have received from customers. We
+            will see how a streaming approach is easier than a traditional
+            approach in set-up, configuration and management, how the Ten Rules
+            of Thumb (TODO: reference to earlier paper) help us write the
+            stylesheet efficiently and quickly and how an uninterrupted stream
+            can be processed by a single stylesheet, gaining performance and
+            stability in comparison to the traditional approach.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Abel</first>
+            <last>Braaksma</last>
+            <organisation>Exselt</organisation>
+            <linkedin-url>https://www.linkedin.com/in/abelbraaksma</linkedin-url>
+            <github-id>abelbraaksma</github-id>
+            <twitter-id>kandura</twitter-id>
+            <bio>
+              <p>Abel Braaksma is creator of the Exselt XSLT 3.0 processor (beta
+                can be downloaded for free) and does XML and XSLT related
+                consultancy next to his other consultancy firm, Abrasoft. He has
+                some 20 years experience with development in general and XML and
+                related technologies in particular and is currently active as an
+                Invited Expert of the XSLT, XQuery and XPath working groups at
+                W3C.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>XML, blockchain and regulatory reporting in the world of
+          finance</title>
+        <time>10:40:00</time>
+        <abstract>
+          <p>The regulatory burden for financial institutions makes it a hard
+            environment to innovate, yet the unfavourable market conditions mean
+            that banks must adopt latest technologies to cut costs and keep up
+            with the market demands.</p>
+          <p>This paper aims to show a technical proof of concept of how to
+            combine the seemingly opposite goals using a combination of tried
+            and tested XML technologies such as XSLT and Schematron in
+            conjunction with experimental distributed ledger technology to drive
+            both regulatory compliance and implement innovative features such as
+            inter-bank trade settlement using blockchain technology.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Lech</first>
+            <last>Rzedzicki</last>
+            <organisation>Kode1100 Ltd</organisation>
+            <linkedin-url>https://uk.linkedin.com/in/lechrzedzicki</linkedin-url>
+            <github-id>xchaotic</github-id>
+            <twitter-id>xchaotic</twitter-id>
+          </person>
+        </people>
+      </talk>
+
+      <break>
+        <title>Morning Coffee</title>
+        <time>11:10:00</time>
+      </break>
+
+      <talk>
+        <title>Pioneering XML-first Workflows for Magazines</title>
+        <time>11:40:00</time>
+        <abstract>
+          <p>Most of the publishing world has long embraced the value of
+            structuring content using SGML/XML in the form of DocBook, DITA or
+            any number of vertical, standardized publishing markup schemes. Yet
+            those who publish magazines have stubbornly remained in a world
+            where page-layout-based workflows predominate. While this remains
+            true today, for the first time magazine publishers are flirting with
+            a change to their traditional publishing workflow that would employ
+            XML-first content creation. In this session you will gain an
+            understanding of the two worlds of publishing, why magazine
+            publishers have been so reluctant to embrace XML technologies and
+            the emerging trends that may bring magazine publishers into the XML
+            publishing domain.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Dianne</first>
+            <last>Kennedy</last>
+            <organisation>Idealliance, Inc.</organisation>
+            <twitter-id>diannekennedy</twitter-id>
+            <linkedin-url>https://www.linkedin.com/in/diannekennedy1</linkedin-url>
+            <bio>
+              <p> Dianne Kennedy is the Idealliance XML Evangelist Emeritus. Ms.
+                Kennedy oversees the development of digital technology
+                specifications for managing integrated end-to-end media
+                workflows and serves as Editor for 30+ Idealliance
+                Specifications. Previously Kennedy served as the VP of Emerging
+                Technologies and Digital Media for Idealliance. She is past
+                chairperson for SAE's J2008 SGML Specification and actively
+                participated in both the CALS and ATA 100 SGML specification
+                development activities. She also acted as editor for ISO 12083,
+                Electronic Manuscript Preparation and Markup and developed an
+                XML version of ISO 12083 in cooperation with NISO. Kennedy
+                chaired the Idealliance XML Conference in 1999 and 2000. </p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>CALS table processing with XSLT and Schematron</title>
+        <time>12:10:00</time>
+        <abstract>
+          <p>CALS tables are used in many technical documentation standards.
+            There are OASIS specifications for CALS tables which include a
+            number of semantic rules to ensure table validity. This paper
+            reports on some of our experiences with CALS table processing and
+            validation. We implemented the majority of our validation code in
+            XSLT and have needed to carefully consider performance when handling
+            large tables of several thousand rows.</p>
+          <p>We have experimented with a number of new XSLT features when
+            addressing performance issues and will report on our experiences. In
+            addition to processing tables we wished to improve the quality of
+            CALS tables that we would meet and which our users/customers would
+            produce (we wished to rid the world of bad tables!). For this we
+            have tried to use schematron to check and report the validity of
+            tables in a user friendly way. We met a number of obstacles and will
+            report on these and our solutions ('work-arounds') in this
+            paper.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Nigel</first>
+            <last>Whitaker</last>
+            <organisation>DeltaXML Ltd</organisation>
+            <github-id>nigelwhitaker</github-id>
+            <twitter-id>nigel_whitaker</twitter-id>
+            <linkedin-url>https://uk.linkedin.com/in/nigel-whitaker-7b1a3b5b</linkedin-url>
+            <bio>
+              <p>Nigel is a software architect at DeltaXML and is repsonsible
+                for new product research and development and has been with the
+                company since 2000, developing many of the company's
+                products.</p>
+              <p>He graduated in Physics and Computer Science, and followed with
+                a PhD in Computer Science, at the University of Manchester.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>Language Aware XML Accumulation</title>
+        <time>12:40:00</time>
+        <abstract>
+          <p>Looking at version control systems, XML data updates, or simply
+            code generation, merging XML based documents has become an
+            omnipresent challenge these days. Each problem domain comes with its
+            own facets of merge algorithms, like three-way merges, two-way
+            merges, and patch applications. In this paper, we will focus on the
+            problem domain of code generation applying patch semantics for
+            generated XML document patches to already existing XML documents. As
+            XML Schemas and DTDs just cover syntax of XML documents, patch
+            application become even harder when language semantics are taken
+            into account. Additionally, due to the fact, that one XML document
+            can be based on multiple languages separated by namespaces, an
+            appropriate merge mechanism has to focus on each language
+            description separately rather than just covering XML syntax. For
+            this need, we developed a XML-based descriptive language called
+            MergeSchema. It is designed for controlling a two-way XML merge to
+            also cover semantical constraints of a XML-based language during
+            merge processing. As part of the MergeSchema, the specification of
+            the equality of nodes is partially based on XPath.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Malte</first>
+            <last>Brunnlieb</last>
+            <organisation>Capgemini</organisation>
+            <github-id>may-bee</github-id>
+            <linkedin-url>https://www.linkedin.com/in/malte-brunnlieb-49307bb8</linkedin-url>
+            <bio>
+              <p>Malte is a Software Engineer at Capgemini</p>
+            </bio>
+          </person>
+          <person>
+            <first>Steffen</first>
+            <last>Holzer</last>
+            <organisation>Capgemini</organisation>
+          </person>
+        </people>
+      </talk>
+
+      <break span="2">
+        <title>Lunch</title>
+        <time>13:10:00</time>
+      </break>
+
+      <talk>
+        <title>Linked Data Templates</title>
+        <time>14:20:00</time>
+        <abstract>
+          <p>Linked Data Templates define the syntax and the semantics of a
+            Linked Data processor which publishes and consumes RDF data over
+            HTTP. The processor responds to Linked Data requests by interpreting
+            a sitemap ontology as instructions to indicate how the request
+            metadata maps to an operation on SPARQL service, and how to generate
+            response body. The LDT vocabulary also provides capabilities to
+            define hypermedia controls, container resources with paginated
+            access, resource constructor templates, validation constraints and
+            skolemization templates.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Martynas</first>
+            <last>Jusevičius</last>
+            <organisation>Linked Data, UAB</organisation>
+            <twitter-id>pumba_lt</twitter-id>
+            <github-id>pumba-lt</github-id>
+            <linkedin-url>https://www.linkedin.com/in/martynasjusevicius</linkedin-url>
+            <bio>
+              <p>Martynas Jusevičius is a software engineer with 10+ years of
+                development experience specializing in XML and Semantic Web
+                technologies. He studied at Vilnius University (Lithuania) as
+                well as IT University of Copenhagen (Denmark). Martynas is the
+                lead developer of Graphity Linked Data Platform, which has been
+                applied in domains such as library data and product information
+                management. He is a proponent of declarative software
+                technologies and distributed web applications and is currently
+                leading an effort to standardize Linked Data Templates, a
+                declarative SPARQL-based alternative to Linked Data Platform
+                specification.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>Scalability of an Open Source XML Database for Big Data</title>
+        <time>14:50:00</time>
+        <abstract>
+          <p>Big Data tools and techniques are starting to make significant
+            contributions in clinical research and studies. We explore the use
+            of XML for holding data in an electronic health record, where the
+            primary data storage is an open source XML database of clinical
+            documents. We evaluate the feasibility of using such a data store
+            for Big Data and describe the techniques used to extend to the
+            massive data sets required for meaningful clinical studies.</p>
+          <p>Using an open source Electronic Health Records system we have
+            loaded the database with a set of patient records and measured the
+            size of the database from 1 to [500,000] patients, together with the
+            response time of a typical query to retrieve and combine data across
+            a cohort of patients.</p>
+          <p>We then describe the implementation of a federated data store,
+            whereby we can scale to millions of patient records.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>John</first>
+            <last>Chelsom</last>
+            <organisation>City University, London</organisation>
+            <linkedin-url>https://www.linkedin.com/in/johnchelsom</linkedin-url>
+            <twitter-id>johnchelsom</twitter-id>
+            <bio>
+              <p>John Chelsom trained as an electrical engineer before gaining a
+                PhD in artificial intelligence in medicine. He has been a
+                Visiting Professor in Health Informatics at City University,
+                London and the University of Victoria, Canada. As Managing
+                Director of CSW Group from 1993 to 2008, John was responsible
+                for implementation of XML workflow and production systems for
+                many major organisations, including the British Medical Journal,
+                Jaguar Cars and the Royal Pharmaceutical Society.</p>
+              <p>The Case Notes product developed by CSW was based on XML and
+                other open standards. As part of the UK Government's NPfiT
+                project which started in 2003, it was the primary clinical
+                system in the national architecture for a shared electronic
+                health record for the population of England. In 2000, John
+                started the XML Summer School and continues as a board member
+                and lecturer in this annual event.</p>
+              <p>Since 2010 he has been the lead developer of the open source
+                cityEHR product – an XRX (Xforms, REST, XQuery) application
+                currently used in a number of hospitals in England.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <break>
+        <title>Afternoon Tea</title>
+        <time>15:20:00</time>
+      </break>
+
+      <talk>
+        <title>Best Practice for DSDL-based Validation</title>
+        <time>15:50:00</time>
+        <abstract>
+          <p>This paper proposes a method how to optimize the set of DSDL
+            validation methods for an arbitrary industry vocabulary. The
+            research is based mainly on a practical case study of creating such
+            an optimized set of DSDL validation artefacts for XLIFF 2, a complex
+            industry vocabulary. Available schema languages have advanced
+            functionality, enhanced expressivity and can be used in concert if
+            needed. This advantage, on the other hand, makes the creation of a
+            stable and robust set of validation artefacts hard, because there
+            would usually be more than one way to describe the same FD
+            (Functional Dependencies) or IC (Integrity Constraints) and various
+            validation tasks can be solved by more than one schema language.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Soroush</first>
+            <last>Saadatfar</last>
+            <organisation>ADAPT Centre</organisation>
+            <twitter-id>soroushsdf</twitter-id>
+            <bio>
+              <p>PhD researcher at ADAPT Centre and member of OASIS XLIFF
+                Technical Committee. Soroush has been working on validation
+                methods for XML-based standards during his research. His
+                Advanced Validation Techniques for XLIFF 2, a combination of
+                XSD, Schematron and NVDL, is to be included in the next version
+                of the standard, XLIFF 2.1.</p>
+            </bio>
+          </person>
+          <person>
+            <first>David</first>
+            <last>Filip</last>
+            <organisation>ADAPT Centre</organisation>
+            <twitter-id>merzbauer</twitter-id>
+            <linkedin-url>https://www.linkedin.com/in/davidfatdavidf</linkedin-url>
+            <bio>
+              <p>David is the chair of the OASIS XLIFF Object Model and Other
+                Serializations (XLIFF OMOS) Technical Committee</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>A journey from document to data</title>
+        <subtitle>buy into one format, get two production-ready assets
+          free</subtitle>
+        <time>16:20:00</time>
+        <abstract>
+          <p>XML is often treated as a neutral format from which to generate
+            other outputs: HTML, JSON, other flavours of XML. In some cases, it
+            can make sense to use it as a means to auto-generate other XML-
+            based assets which themselves act on XML inputs, such as XSLT or
+            Schematron schemas.</p>
+          <p>This paper will present a study of how XML and related technologies
+            helped a publisher to streamline the production process for one of
+            its products, enabling better consistency of data capture and an
+            enhanced customer experience. It will describe how a legacy
+            document-centric format was refined to allow publication processes
+            to run more smoothly, and how an abstraction of the capturing format
+            allowed other key assets in the workflow to be generated
+            automatically, reducing development costs and delivering ahead of
+            schedule.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Andrew</first>
+            <last>Sales</last>
+            <organisation>Andrew Sales Digital Publishing Limited</organisation>
+            <twitter-id>asdigpub</twitter-id>
+            <github-id>AndrewSales</github-id>
+            <linkedin-url>https://uk.linkedin.com/in/andrew-sales-1870401</linkedin-url>
+            <bio>
+              <p>Andrew's background is in desktop publishing, translation and
+                editing. He has specialised in XML and related technologies
+                since 2000. He designs, writes and documents DTDs and schemas
+                for publishers and other users of document-based XML. He
+                provides XML and workflow consultancy and has introduced
+                digital-first workflows. He creates best-practice content models
+                and focuses on validation and quality assurance as the basis of
+                sound markup-based production. He is skilled in manipulating and
+                validating XML using XSLT, XQuery, Schematron, Java and
+                (parser-based) Python.</p>
+              <p>Andrew contributes to international standardisation as an
+                individual expert member of IST/41, the Technical Committee of
+                BSI (the UK member of ISO and IEC) responsible for XML and
+                related standards.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>Social Dinner + Demo Jam</title>
+        <time>19:30:00</time>
+        <abstract>
+          <p>DemoJam (bring out your demos)</p>
+          <p>Followed by Social Dinner</p>
+        </abstract>
+      </talk>
+    </talks>
+  </day>
+
+  <day name="Sunday, June 5th" id="2">
+    <talks>
+
+      <talk>
+        <title>Structure-Aware Search of UK Legislation</title>
+        <time>10:00:00</time>
+        <abstract>
+          <p>We have created an application that enables searching the UK
+            statute book with reference to the structure of legislative
+            documents. Users can target individual legislative provisions and
+            receive direct links to the matching document components. For
+            example, users can search for chapters that contain certain phrases
+            or for sections that have certain headings. In this paper, we
+            describe the XML format used to represent UK legislation and the
+            technologies used to fulfill the queries. We have developed a
+            simple, domain-specific query language to express user requests, and
+            we use MarkLogic to store and index the documents. We parse user
+            requests in XQuery and translate them into native MarkLogic query
+            directives, but because some of the searches we support cannot fully
+            be expressed as MarkLogic queries, we sometimes construct
+            over-inclusive queries and filter the results at the application
+            level. The application is currently in beta, and a working
+            demonstration will be provided.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>John</first>
+            <last>Sheridan</last>
+            <organisation>The National Archives</organisation>
+            <twitter-id>johnlsheridan</twitter-id>
+            <linkedin-url>https://uk.linkedin.com/in/johnlsheridan</linkedin-url>
+            <bio>
+              <p>John Sheridan is Digital Director of The National Archives,
+                responsible for all of IT digital services. Previously he was
+                Head of Legislation Services there, and he led the team
+                responsible for creating the legislation.gov.uk website, as well
+                overseeing the operation of the official Gazette.</p>
+              <p>A former co-chair of the W3C e-Government Interest Group, John
+                has a strong interest in web and data standards. He serves on
+                the UK Government’s Open Standards Board which sets data
+                standards for use across government. John was an early pioneer
+                of open data and remains active in that community.</p>
+              <p>John’s academic background is in mathematics and information
+                technology, with a degree in Mathematics and Computer Science
+                from the University of Southampton and a Master’s Degree in
+                Information Technology from the University of Liverpool. John
+                recently led, as Principal Investigator, an Arts and Humanities
+                Research Council funded project, ‘big data for law’, exploring
+                the application of data analytics to the statute book, winning
+                the Halsbury Legal Award for Innovation.</p>
+            </bio>
+          </person>
+          <person>
+            <first>Jim</first>
+            <last>Mangiafico</last>
+            <github-id>mangiafico</github-id>
+            <twitter-id>mangiafico</twitter-id>
+            <bio>
+              <p>Jim Mangiafico is an independent software developer living in
+                Washington DC. A former lawyer, he assists governments with the
+                representation, organization and distribution of legislative
+                data. He currently works with The National Archives of the UK,
+                The Law Reform Commission of Ireland, and the United States
+                House of Representatives.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>Interoperability of XProc pipelines</title>
+        <subtitle>A real world publishing scenario</subtitle>
+        <time>10:40:00</time>
+        <abstract>
+          <p>XProc proves to be a very efficient language when it comes to apply
+            complex chains of operations on sequences of XML documents. In this
+            paper we will evaluate the interoperability of XProc pipelines, i.e.
+            the possibility to migrate a complex pipeline system developed for
+            one XProc processor to another. We take interoperability in this
+            sense to be an indicator for the maturity of XProc and its
+            usability, which in turn is relevant for technology decision makers,
+            pipeline authors and users and the XProc community as a whole.</p>
+          <p>Although XProc as a W3C recommendation is the result of a complex
+            process of discussions and testing, the question of interoperability
+            in our sense might come up, because for a long time there was only
+            one XProc implementation publicly available and actively maintained:
+            XMLCalabash developed by Norman Walsh, who is also chair of W3C’s
+            XProc working group. Therefore authors did not even have the chance
+            to test their pipelines in different environments. This does also
+            hold for transpect, a framework for checking and converting XML
+            documents and XML-based data, such as .docx, IDML, and EPUB,
+            developed by le-tex, a premedia services and software development
+            company based in Leipzig, Germany. transpect is based on open
+            standards, in particular XProc 1.0, XSLT 2.0, Relax NG, and
+            Schematron. It has been adopted by many publishers and
+            standardization bodies and is considered as the largest XProc
+            application worldwide.</p>
+          <p>Our real world scenario to assess interoperability of XProc
+            pipelines is the migration of transpect to MorganaXProc, a new XProc
+            processor developed by &lt;xml-project/&gt;. As it does also conform
+            to the W3C test suite, there is a good chance to find some answers
+            to the question of real world interoperability of XProc
+            pipelines.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Achim</first>
+            <last>Berndzen</last>
+            <organisation>&lt;xml-project /&gt;</organisation>
+            <github-id>xml-project</github-id>
+            <twitter-id>xml_project</twitter-id>
+            <bio>
+              <p> Achim earned an M.A. in philosophy at Aachen University and
+                has more than 15 years of teaching experience in communications.
+                In 2014 he founded &lt;xml-project /&gt;. He is developer of
+                MorganaXProc, a fully compliant XProc processor with an emphasis
+                on configurability and plugability. Achim also works on projects
+                use the power of XML technologies in web applications. </p>
+            </bio>
+          </person>
+          <person>
+            <first>Gerrit</first>
+            <last>Imsieke</last>
+            <organisation>le-tex publishing services GmbH</organisation>
+            <linkedin-url>https://de.linkedin.com/in/gerrit-imsieke-19b79a28</linkedin-url>
+            <twitter-id>gimsieke</twitter-id>
+            <github-id>gimsieke</github-id>
+            <bio>
+              <p>Gerrit is the Managing Director at le-tex publishing services
+                GmbH</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <break>
+        <title>Morning Coffee</title>
+        <time>11:10:00</time>
+      </break>
+
+      <talk span="3">
+        <title>XSLT 3.0 Workshop</title>
+        <time>11:40:00</time>
+        <abstract>
+          <p>
+            XSLT 3.0 is now a Candidate Recommendation, which is the final
+            stage in the W3C process before a new specification becomes
+            ratified. Before final approval, W3C needs more than one
+            implementation of the specification to be available and that
+            implementations are interoperable with each other, which in the
+            case of XSLT means that one should be able to run the same
+            stylesheets on different processors.
+          </p>
+          <p>
+            This interactive and practical session is an opportunity to learn
+            about some of the new features of XSLT 3.0, how to apply them and
+            how they work with both Saxon and Exselt.
+          </p>
+          <p>
+            This session will be led jointly by Abel Braaksma and Michael Kay,
+            who are both members of the W3C XSLT working group which is
+            responsible for creating the standard and are designers
+            of the respective implementations.
+          </p>
+          <p>
+            It would be ideal if session was built around genuine questions
+            from the audience and that Abel and Michael tackle some problems
+            which have come from attendees. Ideas and Questions about XSLT 3.0
+            submitted in advance and introduced on the day are both welcomed.
+          </p>
+          <p>
+            NOTE: The Exselt Processor, which was previously only available on
+            Microsoft Windows platforms will be available for Mac OS.
+          </p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Michael</first>
+            <last>Kay</last>
+            <organisation>Saxonica Ltd</organisation>
+            <twitter-id>michaelhkay</twitter-id>
+            <github-id>michaelhkay</github-id>
+            <linkedin-url>https://www.linkedin.com/in/mikay</linkedin-url>
+            <bio>
+              <p>Michael is the Founder / Director of Saxonica, author of Saxon,
+                editor of the W3C XSLT specification, a Fellow of the British
+                Computer Society and holds a phD in Computer Science from the
+                University of Cambridge.</p>
+            </bio>
+          </person>
+          <person speaker="yes">
+            <first>Abel</first>
+            <last>Braaksma</last>
+            <organisation>Exselt</organisation>
+            <linkedin-url>https://www.linkedin.com/in/abelbraaksma</linkedin-url>
+            <github-id>abelbraaksma</github-id>
+            <twitter-id>kandura</twitter-id>
+            <bio>
+              <p>Abel Braaksma is creator of the Exselt XSLT 3.0 processor (beta
+                can be downloaded for free) and does XML and XSLT related
+                consultancy next to his other consultancy firm, Abrasoft. He has
+                some 20 years experience with development in general and XML and
+                related technologies in particular and is currently active as an
+                Invited Expert of the XSLT, XQuery and XPath working groups at
+                W3C.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <break span="2">
+        <title>Lunch</title>
+        <time>13:10:00</time>
+      </break>
+
+      <talk>
+        <title>Using XForms to Create, Publish, and Manage Linked Open
+          Data</title>
+        <time>14:20:00</time>
+        <abstract>
+          <p>This paper details the numismatic thesaurus, Nomisma.org, and its
+            associated front-end and back-end features. The application's
+            architecture is grounded in XML technologies and SPARQL, with XForms
+            underpinning the creation, editing, and publication of RDF. Its
+            public user interface is driven by the XML Pipeline Language in
+            Orbeon, enabling transformation of RDF/XML and SPARQL XML responses
+            into a wide array of alternative serializations, driving geographic
+            visualizations and quantitative analyses in other digital numismatic
+            projects.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Ethan</first>
+            <last>Gruber</last>
+            <organisation>American Numismatic Society</organisation>
+            <twitter-id>ewg118</twitter-id>
+            <github-id>ewg118</github-id>
+            <bio>
+              <p>Ethan is the Director of Data Science for the American
+                Numismatic Society (ANS). With ten years of experience in
+                digital humanities and cultural heritage informatics projects,
+                Ethan is responsible for developing the interfaces for the
+                Society's collections of objects and archives. He is the
+                developer of Numishare, an open-source framework for delivering
+                coin collections online and various ANS projects which implement
+                this software, e.g., Online Coins of the Roman Empire and Coin
+                Hoards of the Roman Republic. He is on the scientific committee
+                and chief software architect for Nomisma.org, an international
+                project that seeks to define the intellectual concepts of
+                numismatics following Linked Open Data methodologies.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>Dynamic Translation of Modular XML Documentation Using Linked
+          Data</title>
+        <time>14:50:00</time>
+        <abstract>
+          <p>STANLEY Black and Decker Innovations have a requirement to produce
+            and maintain DocBook-based documentation, which is translated into
+            up to 10 languages. Documents are built by transclusion from several
+            source files, some of which may be stored remotely. Each document
+            may contain SVG illustrations which also needed translation.</p>
+          <p>We selected XLIFF as a translation file format. To keep maintenance
+            effort to a minimum, we needed tools that enabled dynamic
+            translations, i.e. translations made at publication time without
+            skeleton files. We also needed tools that could find the correct
+            translations for each translatable element after all the source
+            files (including remote source files) had been transcluded into a
+            single document.</p>
+          <p>This paper describes the solutions we developed. These included
+            markup (mostly ITS 2.0) in the source documentation, linked data
+            (using RDF/XML) to identify the translation resources, and a set of
+            XSLT stylesheets to handle the transformations.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Simon</first>
+            <last>Dew</last>
+            <organisation>STANLEY Black and Decker Innovations</organisation>
+            <twitter-id>simonjabadaw</twitter-id>
+            <github-id>janiveer</github-id>
+            <google-plus-id>SimonDewTechComms</google-plus-id>
+            <bio>
+              <p>Simon Dew studied English Language and Linguistics at the
+                University of Manchester. Since graduating he has made a career
+                as a technical communicator, with a special interest in XML,
+                localisation, and computational linguistics.</p>
+              <p>He worked for nearly ten years as a technical author in the new
+                product development team at Stanley Black &amp; Decker
+                Innovations Limited, where he championed the adoption of XML for
+                documentation, based around the DocBook, SVG and XLIFF
+                standards. He developed tools to ease document translation and
+                publication, and successfully pushed the company to release
+                these tools to the community under a free and open source
+                licence.</p>
+              <p>He currently works as a technical author for Lhasa Limited, a
+                not-for-profit organisation producing cheminformatic software to
+                facilitate collaborative data sharing. Simon also undertakes
+                freelance work, maintaining his relationship with Stanley Black
+                &amp; Decker, and continues to develop the XML documentation
+                tools he produced there.</p>
+              <p>Simon lives in Manchester, U.K.</p>
+            </bio>
+          </person>
+        </people>
+      </talk>
+
+      <break>
+        <title>Afternoon Tea</title>
+        <time>15:20:00</time>
+      </break>
+
+      <talk>
+        <title>Parse Earley, Parse Often: How to Parse Anything to XML</title>
+        <time>15:50:00</time>
+        <abstract>
+          <p>Invisible XML, ixml for short, is a generic technique for treating
+            any parsable format as if it were XML, and thus allowing any
+            parsable object to be injected into an XML pipeline. Based on the
+            observation that XML can just be seen as the description of a
+            parse-tree, any document can be parsed, and then serialised as XML.
+            The parsing can also be undone, thus allowing roundtripping.</p>
+          <p>This paper discusses issues around grammar design, and in
+            particular parsing algorithms used to recognise any document, and
+            converting the resultant parse-tree into XML, and gives a new
+            perspective on a classic algorithm.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Steven</first>
+            <last>Pemberton</last>
+            <organisation>CWI</organisation>
+            <twitter-id>stevenpemberton</twitter-id>
+            <linkedin-url>http://nl.linkedin.com/in/stevenpemberton</linkedin-url>
+          </person>
+        </people>
+      </talk>
+
+      <talk>
+        <title>Closing Address (5 minutes)</title>
+        <time>16:20:00</time>
+        <abstract>
+          <p>Giving thanks and closing of the conference.</p>
+        </abstract>
+        <people>
+          <person speaker="yes">
+            <first>Charles</first>
+            <last>Foster</last>
+            <twitter-id>fostercharles</twitter-id>
+            <github-id>cfoster</github-id>
+            <linkedin-url>https://uk.linkedin.com/in/marklogic</linkedin-url>
+          </person>
+        </people>
+      </talk>
+
+    </talks>
+  </day>
+</conference>

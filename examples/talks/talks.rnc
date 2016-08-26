@@ -1,0 +1,47 @@
+grammar {
+  start =
+    element conference {
+      element day {
+        attribute name { text },
+        attribute id { text },
+        talks
+      }+
+    }
+  
+  talks =
+    element talks {
+      (
+        element talk {
+          attribute span { xsd:integer }?,
+          element title { text },
+          element subtitle { text }?,
+          element time { xsd:time }?,
+          element abstract {
+            element p { text }+
+          },
+          element people {
+            element person {
+              attribute speaker { xsd:NCName }?, 
+              element first { xsd:NCName },
+              element last { xsd:NCName },
+              (
+                element organisation { text }? &
+                element twitter-id { xsd:NCName }? &
+                element github-id { xsd:NCName }? &
+                element linkedin-url { xsd:anyURI }? &
+                element google-plus-id { xsd:NCName }? &
+                element bio {
+                  element p { text }*
+                }?
+              )
+            }+
+          }*
+        } |
+        element break {
+          attribute span { xsd:integer }?,
+          element title { text },
+          element time { xsd:time }?
+        }
+      )+
+    }
+}
