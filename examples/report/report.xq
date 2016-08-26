@@ -10,7 +10,7 @@ declare variable $report := rng:schema-report('report.rnc');
        throwing an error on an invalid document :)
   for $x in fn:collection('data')
   return
-  <file uri="{document-uri(.)}">
-    <xsl:sequence select="$report(.)" />          
-  </file>
+  <file uri="{document-uri(.)}">{
+    $report(.)          
+  }</file>
 }</out>
