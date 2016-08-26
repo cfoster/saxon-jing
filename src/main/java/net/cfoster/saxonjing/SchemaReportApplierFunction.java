@@ -15,31 +15,26 @@
  */
 package net.cfoster.saxonjing;
 
-import net.sf.saxon.dom.NodeOverNodeInfo;
 import net.sf.saxon.expr.Callable;
 import net.sf.saxon.expr.XPathContext;
 import net.sf.saxon.om.*;
+import net.sf.saxon.query.QueryResult;
 import net.sf.saxon.trans.XPathException;
 import net.sf.saxon.value.SequenceExtent;
-import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXParseException;
 
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.Properties;
 
 public class SchemaReportApplierFunction implements Callable
 {
@@ -47,6 +42,11 @@ public class SchemaReportApplierFunction implements Callable
   protected final Sequence[] initialArguments;
   protected final InputSource inputSource;
   protected final ValidateRng validator;
+
+  protected static final Properties EMPTY_PROPERTIES = new Properties();
+  static {
+    EMPTY_PROPERTIES.setProperty("version", "1.1");
+  }
 
   /**
    * Constructor compiles RNG Schema for future use
@@ -87,15 +87,17 @@ public class SchemaReportApplierFunction implements Callable
     Sequence[] arguments) throws XPathException
   {
     NodeInfo item = (NodeInfo)arguments[0].head();
-    Node node = NodeOverNodeInfo.wrap(item);
+
+    StringWriter sw = new StringWriter();
+    QueryResult.serialize(item, new StreamResult(sw), EMPTY_PROPERTIES);
 
     try
     {
-      validator.validate(new InputSource(node2stream(node)));
+      validator.validate(new InputSource(new StringReader(sw.toString())));
     }
     catch(ValidateRngException e)
     {
-      throw new XPathException(e.getMessage(), e.getErrorCode(), context);
+      throw e.createXPathException(context);
     }
 
     ErrorHandlerImpl eh = validator.getErrorHandler();
@@ -110,6 +112,7 @@ public class SchemaReportApplierFunction implements Callable
       serializeErrorList("fatal","message", eh.fatal, out);
       serializeErrorList("error","message", eh.error, out);
       serializeErrorList("warning","message", eh.warning, out);
+
       out.writeEndElement(); // </report>
       out.flush();
     } catch (XMLStreamException e) {
@@ -193,21 +196,4 @@ public class SchemaReportApplierFunction implements Callable
       }
     }
   }
-
-  static final InputStream node2stream(Node node)
-  {
-    try {
-      ByteArrayOutputStream o = new ByteArrayOutputStream();
-      TransformerFactory.newInstance().newTransformer().transform(
-        new DOMSource(node),
-        new StreamResult(o)
-      );
-      return new ByteArrayInputStream(o.toByteArray());
-    }
-    catch(Exception e)
-    {
-      throw new RuntimeException(e);
-    }
-  }
-
 }

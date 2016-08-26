@@ -1,0 +1,6 @@
+default namespace = ""
+
+start =
+  element e {
+    element text { text }+
+  }

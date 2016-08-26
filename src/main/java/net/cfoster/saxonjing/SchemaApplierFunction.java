@@ -16,14 +16,17 @@
 
 package net.cfoster.saxonjing;
 
-import net.sf.saxon.dom.NodeOverNodeInfo;
 import net.sf.saxon.expr.XPathContext;
 import net.sf.saxon.om.NodeInfo;
 import net.sf.saxon.om.Sequence;
+import net.sf.saxon.query.QueryResult;
 import net.sf.saxon.trans.XPathException;
 import net.sf.saxon.value.EmptySequence;
-import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
+
+import javax.xml.transform.stream.StreamResult;
+import java.io.StringReader;
+import java.io.StringWriter;
 
 public class SchemaApplierFunction extends SchemaReportApplierFunction
 {
@@ -40,10 +43,12 @@ public class SchemaApplierFunction extends SchemaReportApplierFunction
     Sequence[] arguments) throws XPathException
   {
     NodeInfo item = (NodeInfo)arguments[0].head();
-    Node node = NodeOverNodeInfo.wrap(item);
+
+    StringWriter sw = new StringWriter();
+    QueryResult.serialize(item, new StreamResult(sw), EMPTY_PROPERTIES);
 
     try {
-      validator.validate(new InputSource(node2stream(node)));
+      validator.validate(new InputSource(new StringReader(sw.toString())));
     } catch(ValidateRngException e) {
       throw new XPathException(e.getMessage(), e.getErrorCode(), context);
     }

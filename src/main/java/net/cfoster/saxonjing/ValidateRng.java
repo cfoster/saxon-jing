@@ -116,9 +116,9 @@ public class ValidateRng
       if(ex.getTargetException() instanceof FileNotFoundException)
       {
         throw new ValidateRngException(
-          MessageFormat.format(
-          "Unable to find Schema file ''{0}''", schemaInputSource.getSystemId()),
-          Constants.ERR_RNG_NOT_FOUND, ex);
+          MessageFormat.format("Unable to find Schema file ''{0}''",
+            schemaInputSource.getSystemId()),
+            Constants.ERR_RNG_NOT_FOUND, ex);
       }
 
       throw new ValidateRngException(

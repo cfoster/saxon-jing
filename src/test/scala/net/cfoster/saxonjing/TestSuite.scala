@@ -82,6 +82,12 @@ class TestSuite extends FunSuite
     xsl("test-006.xsl")
   }
 
+  test("Dealing with XML 1.1 documents")
+  {
+    xsl("test-007.xsl")
+  }
+
+
   test("Test String to URL")
   {
     assert(
