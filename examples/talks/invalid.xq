@@ -21,10 +21,8 @@ declare variable $invalid-conference :=
   </conference>;
 
 <out>{
-
-(: validate an XML node :)
+  (: validate an XML node :)
   $schema($invalid-conference)
-
 }
 Success ????
 </out>
