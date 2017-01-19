@@ -5,7 +5,7 @@
   <groupId>net.cfoster</groupId>
   <artifactId>saxon-jing</artifactId>
   <packaging>jar</packaging>
-  <version>0.9.1</version>
+  <version>0.9.2</version>
   <name>saxon-jing</name>
 
   <build>
@@ -87,17 +87,17 @@
     <dependency>
       <groupId>com.saxonica</groupId>
       <artifactId>saxon9ee</artifactId>
-      <version>9.7.0.7</version>
+      <version>9.7.0.14</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/lib/saxon9ee-9.7.0.7.jar</systemPath>
+      <systemPath>${project.basedir}/lib/saxon9ee-9.7.0.14.jar</systemPath>
     </dependency>
 
     <dependency>
       <groupId>com.saxonica</groupId>
       <artifactId>saxon9-icu</artifactId>
-      <version>9.7.0.7</version>
+      <version>9.7.0.14</version>
       <scope>system</scope>
-      <systemPath>${project.basedir}/lib/saxon9-icu-9.7.0.7.jar</systemPath>
+      <systemPath>${project.basedir}/lib/saxon9-icu-9.7.0.14.jar</systemPath>
     </dependency>
 
     <dependency>
