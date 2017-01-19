@@ -17,6 +17,7 @@ package net.cfoster.saxonjing;
 
 import net.sf.saxon.Configuration;
 import net.sf.saxon.lib.Initializer;
+import net.sf.saxon.s9api.Processor;
 
 import javax.xml.transform.TransformerException;
 
@@ -24,6 +25,7 @@ public class JingInitializer implements Initializer
 {
   public void initialize(Configuration config) throws TransformerException {
     config.registerExtensionFunction(new SchemaFunction());
-    config.registerExtensionFunction(new SchemaReportFunction());
+    config.registerExtensionFunction(
+      new SchemaReportFunction((Processor)config.getProcessor()));
   }
 }

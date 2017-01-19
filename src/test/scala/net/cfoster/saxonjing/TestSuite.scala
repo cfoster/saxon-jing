@@ -87,6 +87,16 @@ class TestSuite extends FunSuite
     xsl("test-007.xsl")
   }
 
+  test("return type of rng:schema function")
+  {
+    xsl("test-008.xsl", true)
+  }
+
+  test("return type of rng:schema-report function")
+  {
+    xsl("test-009.xsl", true)
+  }
+
 
   test("Test String to URL")
   {
@@ -101,8 +111,9 @@ class TestSuite extends FunSuite
 
   def xsl(sheet : String, ee : Boolean = false): Unit = {
     val proc : Processor = new Processor(ee)
+    // proc.setConfigurationProperty()
     proc.registerExtensionFunction(new SchemaFunction())
-    proc.registerExtensionFunction(new SchemaReportFunction())
+    proc.registerExtensionFunction(new SchemaReportFunction(proc))
     proc.newXsltCompiler().compile(
       new StreamSource(new File(PATH, sheet))
     ).load30().callTemplate(null)
