@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<configuration edition="EE" xmlns="http://saxon.sf.net/ns/configuration">
+  <global expandAttributeDefaults="false" />
+</configuration>

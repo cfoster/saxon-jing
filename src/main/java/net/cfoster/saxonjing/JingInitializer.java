@@ -23,9 +23,12 @@ import javax.xml.transform.TransformerException;
 
 public class JingInitializer implements Initializer
 {
-  public void initialize(Configuration config) throws TransformerException {
+  public void initialize(Configuration config) throws TransformerException
+  {
+    Processor proc = (Processor)config.getProcessor();
+    if(proc == null)
+      proc = new Processor(config);
     config.registerExtensionFunction(new SchemaFunction());
-    config.registerExtensionFunction(
-      new SchemaReportFunction((Processor)config.getProcessor()));
+    config.registerExtensionFunction(new SchemaReportFunction(proc));
   }
 }

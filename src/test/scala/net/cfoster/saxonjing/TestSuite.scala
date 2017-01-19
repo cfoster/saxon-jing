@@ -18,6 +18,7 @@ package net.cfoster.saxonjing
 import java.io.File
 import javax.xml.transform.stream.StreamSource
 
+import net.sf.saxon.Configuration
 import net.sf.saxon.s9api._
 import org.scalatest.FunSuite
 
@@ -95,6 +96,18 @@ class TestSuite extends FunSuite
   test("return type of rng:schema-report function")
   {
     xsl("test-009.xsl", true)
+  }
+
+  test("Issue #4")
+  {
+    net.sf.saxon.Transform.main(
+      Array(
+        "-init:net.cfoster.saxonjing.JingInitializer",
+        "-config:src/test/resources/config-4.xml",
+        "-s:src/test/resources/test-009.xsl",
+        "-xsl:src/test/resources/test-009.xsl",
+        s"-o:${File.createTempFile("temp", System.nanoTime().toString())}.xml")
+    )
   }
 
 

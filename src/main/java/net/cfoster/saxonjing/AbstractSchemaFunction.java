@@ -15,11 +15,8 @@
  */
 package net.cfoster.saxonjing;
 
-import net.sf.saxon.expr.StaticProperty;
 import net.sf.saxon.lib.ExtensionFunctionDefinition;
 import net.sf.saxon.om.StructuredQName;
-import net.sf.saxon.type.AnyFunctionType;
-import net.sf.saxon.type.SpecificFunctionType;
 import net.sf.saxon.value.SequenceType;
 
 public abstract class AbstractSchemaFunction extends ExtensionFunctionDefinition
