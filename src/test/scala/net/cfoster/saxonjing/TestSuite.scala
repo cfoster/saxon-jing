@@ -98,6 +98,11 @@ class TestSuite extends FunSuite
     xsl("test-009.xsl", true)
   }
 
+  test("UNC Paths")
+  {
+    xsl("test-unc-paths.xsl", true)
+  }
+
   test("Issue #4")
   {
     net.sf.saxon.Transform.main(
