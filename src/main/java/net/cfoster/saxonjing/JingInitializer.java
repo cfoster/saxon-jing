@@ -25,9 +25,12 @@ public class JingInitializer implements Initializer
 {
   public void initialize(Configuration config) throws TransformerException
   {
-    Processor proc = (Processor)config.getProcessor();
-    if(proc == null)
-      proc = new Processor(config);
+    // 2021-08-10 jkalvesmaki: commented out to work with Saxon 9.9+
+    // Processor proc = (Processor)config.getProcessor();
+    // Processor proc =
+    // if(proc == null)
+    // 2021-08:10 jkalvesmaki: converted the next line into a variable declaration
+    Processor proc = new Processor(config);
     config.registerExtensionFunction(new SchemaFunction());
     config.registerExtensionFunction(new SchemaReportFunction(proc));
   }
